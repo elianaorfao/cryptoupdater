@@ -6,15 +6,12 @@ A multithreaded Java application that simulates live cryptocurrency price update
 
 - **Real-Time Price Updates**: 
   - Randomly generates prices for Bitcoin, Ethereum, Litecoin and TrumpCoin.
-  - Updates prices at regular intervals using a separate thread (`PriceUpdater`).
+  - Updates prices at regular intervals using a separate thread (PriceUpdater).
 
 - **Thread-Safe Access**: 
-  - Ensures safe access to shared resources using `ReentrantLock`.
-  - Prevents race conditions during concurrent reads and writes.
+  - Ensures safe access to shared resources using ReentrantLock.
+  - Prevents race conditions.
 
 - **Non-Blocking Reads**: 
-  - Main thread uses `tryLock()` to avoid being blocked while reading prices.
+  - Main thread uses tryLock() to avoid being blocked while reading prices.
   - Ensures efficient execution and responsiveness.
-
-- **Graceful Shutdown**: 
-  - Handles thread interruptions cleanly to ensure a proper exit.
